@@ -10,17 +10,19 @@
 //   removeDupesCI('AaAaBbBb'); // 'AB'
 //   removeDupesCI('cAtCaT'); // 'cAt'
 
-
-function removeDupes(input){
-
+function removeDupes(input) {
+  return input
+    .split('')
+    .reduce((singleChars, char) => {
+      if (!singleChars.includes(char)) {
+        singleChars.push(char);
+      }
+      return singleChars;
+    }, [])
+    .join('');
 }
 
 //CI for case insensitive
-function removeDupesCI(input){
+function removeDupesCI(input) {}
 
-}
-
-module.exports = {removeDupes:removeDupes,
-									removeDupesCI:removeDupesCI,
-									attendance :"ENTER ATTENDANCE HERE"
-								 };
+console.log(removeDupes('AaAaBbBb'));
