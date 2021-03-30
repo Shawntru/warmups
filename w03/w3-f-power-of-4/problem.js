@@ -1,20 +1,20 @@
-// Write a method that returns true if a given parameter is a power of 4, 
-// and false if it's not. If parameter is not an Integer (eg String, Array) 
+// Write a method that returns true if a given parameter is a power of 4,
+// and false if it's not. If parameter is not an Integer (eg String, Array)
 // method should return false as well.
 //Also write a recursive version
 
 function powerOf4(x) {
-  //write iterative solution here
-  
+  if (isNaN(x) || x < 4) return false;
+  while (x >= 4) {
+    x /= 4;
+  }
+  return x === 1;
 }
 
 function powerOf4R(x) {
-  //write recursive solution here
-  
+  if (isNaN(x) || x < 4) return false;
+  x /= 4;
+  return x === 1 ? true : powerOf4R(x);
 }
 
-module.exports = {
-  powerOf4: powerOf4,
-  powerOf4R: powerOf4R,
-  attendance:"wordy word here"
-};
+console.log(powerOf4R(16));
