@@ -1,14 +1,14 @@
 // Description:
 
-// Lucy loves to travel. Luckily she is a renowned computer 
-// scientist and gets to travel to international conferences 
+// Lucy loves to travel. Luckily she is a renowned computer
+// scientist and gets to travel to international conferences
 // using her department's budget.
 
 // Each year, Society for Exciting Computer Science Research (SECSR)
 // organizes several conferences around the world. Lucy always picks
-// one conference from that list that is hosted in a city she hasn't 
+// one conference from that list that is hosted in a city she hasn't
 // been to before, and if that leaves her with more than one option,
-//  she picks the conference that she thinks would be most relevant 
+//  she picks the conference that she thinks would be most relevant
 //  for her field of research.
 
 // Write a function conferencePicker that takes in two arguments:
@@ -17,7 +17,7 @@
 // as an array of strings.
 // citiesOffered, a list of cities that will host SECSR conferences
 // this year, given as an array of strings. citiesOffered will already
-// be ordered in terms of the relevance of the conferences for Lucy's 
+// be ordered in terms of the relevance of the conferences for Lucy's
 // research (from the most to the least relevant).
 // The function should return the city that Lucy should visit, as a
 // string.
@@ -28,7 +28,7 @@
 // city before.
 // SECSR organizes at least two conferences each year.
 // If all of the offered conferences are hosted in cities that Lucy
-// has visited before, the function should return 'No worthwhile conferences 
+// has visited before, the function should return 'No worthwhile conferences
 // this year!' (Nothing in Haskell)
 
 // Example:
@@ -39,13 +39,26 @@
 // conferencePicker (citiesVisited, citiesOffered);
 // // ---> 'Paris'
 
-function conferencePicker (citiesVisited, citiesOffered) {
+/*
+Have: Two Arrays of strings
+Want: String that is unique - not in cities visited array 
 
-} // END FUNCTION
+If cities visited.length === 0, return first city offered
+instantiate var citiesToVisit as empty []
+citiesOffered, forEach city, find that city inside Visited array
+  if -1 returned, set citiesToVisit to current city using for iteration
+if citiesToVisit.length > 0, return citiesToVisit[1]
+if still null, return 'None worthwhile'
+*/
 
-module.exports = {
-  conferencePicker:conferencePicker,
-  attendance:"WORD UP"
+function conferencePicker(citiesVisited, citiesOffered) {
+  if (citiesVisited.length === 0) return citiesOffered[1];
+  let citiesToVisit = citiesOffered.find(
+    (city) => !citiesVisited.includes(city)
+  );
+  return citiesToVisit ? citiesToVisit : 'No worthwhile conferences this year!';
 }
 
-
+module.exports = {
+  conferencePicker: conferencePicker,
+};

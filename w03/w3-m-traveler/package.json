@@ -4,14 +4,15 @@
   "description": "",
   "main": "m-conference-traveller-warmup.js",
   "directories": {
-    "test": "test"
+    "test": "mocha"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chai": "^3.5.0"
+    "chai": "^3.5.0",
+    "mocha": "^8.3.2"
   }
 }
