@@ -11,16 +11,13 @@ getSum(0, 1) == 1   // 0 + 1 = 1
 getSum(1, 1) == 1   // 1 Since both are same
 getSum(-1, 0) == -1 // -1 + 0 = -1
 getSum(-1, 2) == 2  // -1 + 0 + 1 + 2 = 2
+
+Psuedo:
+
+Have: 2 arguments, integers
+Want: Sum of all integers between them
+
+
 */
 
-function getSum( a, b ) {
-
-} // END FUNCTION
-
-
-module.exports = {
-  getSum:getSum,
-  attendance:"WORD UP"
-}
-
-
+function getSum(a, b) {}
